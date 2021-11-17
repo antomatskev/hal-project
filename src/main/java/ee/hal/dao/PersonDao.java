@@ -9,24 +9,21 @@ import ee.hal.model.Person;
 
 public class PersonDao {
 
-    private static Long id = 0L;
-
     public int registerPerson(Person person) throws ClassNotFoundException {
         String INSERT_USERS_SQL = "INSERT INTO person" +
-                " (personal_code, first_name, last_name, address, email, bank_account, insurance) VALUES " +
+                " (personalCode, firstName, lastName, address, email, bankAccount, insurance) VALUES " +
                 " (?, ?, ?, ?, ?,?,?);";
 
         int result = 0;
 
-        Class.forName("com.mysql.cj.jdbc.Driver");
+        Class.forName("org.postgresql.Driver");
 
         try (Connection connection = DriverManager
-                .getConnection("injdbc:mysql://localhost:3306/employees?allowPublicKeyRetrieval=true&useSSL=false", "root", "Password123!");
+                .getConnection("jdbc:postgresql://hattie.db.elephantsql.com/xxpiazwq", "xxpiazwq", "lYYEfiXK1z2GPt9DiCi_dH_X1MSprLiX");
 
              // Step 2:Create a statement using connection object
              PreparedStatement preparedStatement = connection.prepareStatement(INSERT_USERS_SQL)) {
-            preparedStatement.setLong(1, id++);
-            preparedStatement.setString(2, person.getPersonalCode());
+            preparedStatement.setString(1, person.getPersonalCode());
             preparedStatement.setString(2, person.getFirstName());
             preparedStatement.setString(3, person.getLastName());
             preparedStatement.setString(4, person.getAddress());

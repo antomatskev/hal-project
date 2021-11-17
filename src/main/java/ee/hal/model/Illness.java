@@ -1,6 +1,6 @@
 package ee.hal.model;
 
-public class SickLeave {
+public class Illness {
 
     private Long id;
     private Long personId;
@@ -10,7 +10,7 @@ public class SickLeave {
     private String medicalDoctor;
     private String notes;
 
-    public SickLeave() {
+    public Illness() {
     }
 
     public Long getId() {

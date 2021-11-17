@@ -9,7 +9,7 @@
 <body>
  <div align="center">
   <h1>Person Register Form</h1>
-  <form action="<%= request.getContextPath() %>/register" method="post">
+  <form action="<%= request.getContextPath() %>/person/register" method="post">
    <table style="with: 80%">
     <tr>
      <td>First Name</td>
@@ -25,7 +25,7 @@
     </tr>
     <tr>
      <td>E-mail</td>
-     <td><input type="password" name="email" /></td>
+     <td><input type="text" name="email" /></td>
     </tr>
     <tr>
      <td>Address</td>

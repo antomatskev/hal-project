@@ -6,8 +6,8 @@ import javax.servlet.http.HttpServlet;
 /**
  * Servlet implementation class EmployeeServlet
  */
-@WebServlet("/register")
+@WebServlet("/payment/register")
 public class PaymentServlet extends HttpServlet {
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 2L;
 
 }
