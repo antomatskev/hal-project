@@ -15,9 +15,9 @@ import ee.hal.model.Person;
 /**
  * Servlet implementation class EmployeeServlet
  */
-@WebServlet("/person/all")
-public class PersonServlet extends HttpServlet {
-    private static final long serialVersionUID = 5L;
+@WebServlet("/person/register")
+public class PersonRegisterServlet extends HttpServlet {
+    private static final long serialVersionUID = 3L;
 
     private final PersonDao personDao = new PersonDao();
 
@@ -27,7 +27,7 @@ public class PersonServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // TODO Auto-generated method stub
         response.getWriter().append("Served at: ").append(request.getContextPath());
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/person.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/person_register.jsp");
         dispatcher.forward(request, response);
     }
 

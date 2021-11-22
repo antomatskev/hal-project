@@ -1,18 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+         pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>HAL incoming sick leaves</title>
+    <meta charset="UTF-8">
+    <title>HAL incoming sick leaves</title>
 </head>
 <body>
- <table>
-<tr>
-    <td><a href="/HAL-project"><img width="50%" src="https://www.haigekassa.ee/sites/default/files/symboolika/hk_eng_cmyk.jpg"></a></td>
-    <td><h1> Sick leave reimbursement</h1>
-    </td>
-</tr>
+<table>
+    <tr>
+        <td><a href="/HAL-project"><img width="50%"
+                                        src="https://www.haigekassa.ee/sites/default/files/symboolika/hk_eng_cmyk.jpg"></a>
+        </td>
+        <td><h1> Sick leave reimbursement</h1>
+        </td>
+    </tr>
 </table>
 <ul>
     <li><a href="/HAL-project/person/all">Persons</a>
@@ -26,7 +28,7 @@
     <h4></h4>
     <table>
         <tr>
-            <td>Here we load the incoming sick leaves </td>
+            <td>Here we load the incoming sick leaves</td>
 
         <tr>
             <td>Person's First name</td>

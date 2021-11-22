@@ -4,7 +4,7 @@
     <description></description>
     <display-name>PersonServlet</display-name>
     <servlet-name>PersonServlet</servlet-name>
-    <servlet-class>ee.hal.controller.PersonServlet</servlet-class>
+    <servlet-class>ee.hal.controller.PersonRegisterServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>PersonServlet</servlet-name>
