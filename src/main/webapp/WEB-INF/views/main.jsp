@@ -18,7 +18,7 @@
     </tr>
 </table>
 <ul>
-    <li><a href="person.jsp">Persons</a>
+    <li><a href="views/person.jsp">Persons</a>
     <li><a href="/HAL-project/person/register">Person registration</a>
     <li><a href="/HAL-project/sl/all">Sick leaves</a>
     <li><a href="/HAL-project/sl/register">New sick leave</a>

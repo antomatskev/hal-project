@@ -15,7 +15,7 @@ import ee.hal.model.Person;
 /**
  * Servlet implementation class EmployeeServlet
  */
-@WebServlet("/person/all")
+@WebServlet("/person/alls")
 public class PersonServlet extends HttpServlet {
     private static final long serialVersionUID = 5L;
 

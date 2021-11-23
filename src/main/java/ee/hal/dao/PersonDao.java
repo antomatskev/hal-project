@@ -8,15 +8,15 @@ import ee.hal.model.Person;
 
 public class PersonDao {
 
-    private final String INSERT_PERSON_SQL = "INSERT INTO person" +
+    private static final String INSERT_PERSON_SQL = "INSERT INTO person" +
             " (personalCode, firstName, lastName, address, email, bankAccount, insurance) VALUES " +
             " (?, ?, ?, ?, ?,?,?);";
-    private final String UPDATE_PERSON_SQL = "update register set name=?,password=?,email=?,sex=?,country=? where id=?";
-    private final String DELETE_PERSON_SQL = "delete from register where id=?";
-    private final String ALL_PERSONS_SQL = "select * from register";
-    private final String RECORD_BY_PERSON_ID_SQL = "select * from register where id=?";
+    private static final String UPDATE_PERSON_SQL = "update register set name=?,password=?,email=?,sex=?,country=? where id=?";
+    private static final String DELETE_PERSON_SQL = "delete from register where id=?";
+    private static final String ALL_PERSONS_SQL = "select * from register";
+    private static final String RECORD_BY_PERSON_ID_SQL = "select * from register where id=?";
 
-    public int registerPerson(Person person) throws ClassNotFoundException {
+    public static int registerPerson(Person person) throws ClassNotFoundException {
         int result = 0;
         Class.forName("org.postgresql.Driver");
         try (Connection connection = DriverManager
@@ -38,7 +38,7 @@ public class PersonDao {
         return result;
     }
 
-    public int update(Person person) throws ClassNotFoundException {
+    public static int update(Person person) throws ClassNotFoundException {
         int result = 0;
         Class.forName("org.postgresql.Driver");
         try (Connection connection = DriverManager
@@ -61,7 +61,7 @@ public class PersonDao {
         return result;
     }
 
-    public int delete(Person person) {
+    public static int delete(Person person) {
         int status = 0;
         try (Connection connection = DriverManager
                 .getConnection("jdbc:postgresql://hattie.db.elephantsql.com/xxpiazwq", "xxpiazwq", "lYYEfiXK1z2GPt9DiCi_dH_X1MSprLiX");
@@ -75,7 +75,7 @@ public class PersonDao {
         return status;
     }
 
-    public List<Person> getAllRecords() {
+    public static List<Person> getAllRecords() {
         List<Person> list = new ArrayList<Person>();
         try (Connection connection = DriverManager
                 .getConnection("jdbc:postgresql://hattie.db.elephantsql.com/xxpiazwq", "xxpiazwq", "lYYEfiXK1z2GPt9DiCi_dH_X1MSprLiX");
@@ -99,7 +99,7 @@ public class PersonDao {
         return list;
     }
 
-    public Person getRecordById(int id) {
+    public static Person getRecordById(Long id) {
         Person person = null;
         try (Connection connection = DriverManager
                 .getConnection("jdbc:postgresql://hattie.db.elephantsql.com/xxpiazwq", "xxpiazwq", "lYYEfiXK1z2GPt9DiCi_dH_X1MSprLiX");
@@ -123,7 +123,7 @@ public class PersonDao {
         return person;
     }
 
-    private void printSQLException(SQLException ex) {
+    private static void printSQLException(SQLException ex) {
         for (Throwable e : ex) {
             if (e instanceof SQLException) {
                 e.printStackTrace(System.err);
